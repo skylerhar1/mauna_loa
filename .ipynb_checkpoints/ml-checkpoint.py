@@ -15,8 +15,11 @@ def plot_df(df):
     INPUT: Pandas DataFrame
     OUTPUT: handle to plot axis
     '''
-    time = df['decimal_date']-df['decimal_date'][0]
-    ax = plt.plot(time,df['C02'])
-    ax.xlabel('time')
-    ax.ylabel('C02')
-    return ax
+    #fig_size = (10, 5)
+    #f = plt.figure(figsize=fig_size)
+    time = df['decimal_date']-df['decimal_date'][0]\
+    
+    f= plt.plot(time,df['C02'])
+    #f.xlabel('time')
+    #f.ylabel('C02')
+    return f
