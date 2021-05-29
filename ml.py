@@ -7,13 +7,16 @@ def get_df(filename):
     INPUT:filename e.g. mauna_loa.csv
     OUTPUT: Pandas Dataframe
     '''
-    ...
-   
+    return_df = pd.read_csv(filename)
+    return return_df
 
 def plot_df(df):
     '''
     INPUT: Pandas DataFrame
     OUTPUT: handle to plot axis
     '''
-    
-    
+    time = df['decimal_date']-df['decimal_date'][0]
+    ax = plt.plot(time,df['C02'])
+    ax.xlabel('time')
+    ax.ylabel('C02')
+    return ax
